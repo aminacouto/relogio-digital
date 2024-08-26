@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nerko One", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: gradient 15s ease infinite;
+    background: linear-gradient(-45deg,#F2668B, #025E73,  #007e67,#026873, #F2668B);
+    background-size: 300% 300%;
+    height: 100vh;
+    color: white;
+}
+@keyframes gradient {
+0%{
+    background-position: 0 50%;
+}
+50% {
+    background-position: 100% 50%;
+}
+100%{
+    background-position: 0 50%;
+}
+}
+
+.boxRelogio{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 550px;
+    height: 200px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.397); 
+}
+
+.boxRelogio div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#horas, #minutos, #segundos{
+    font-size: 100px;
+
+}
