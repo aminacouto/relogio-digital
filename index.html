@@ -4,21 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0f2027">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="icon" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
     <link rel="stylesheet" href="estilo/estilo.css">
-    <title>Digital Clock</title>
+
+    <title>Relógio Digital</title>
 </head>
 
 <body>
 
     <div class="container">
 
-        <div id="dataAtual" class="data">
+        <time id="dataAtual" class="data">
             00/00/0000 - Segunda-feira
-        </div>
+        </time>
 
-        <div class="boxRelogio">
+        <div class="boxRelogio" role="timer">
+
             <div>
                 <span id="horas">00</span>
                 <small>Horas</small>
@@ -33,11 +40,49 @@
                 <span id="segundos">00</span>
                 <small>Segundos</small>
             </div>
+
         </div>
+
+        <button id="btnConfig" aria-label="Abrir configurações">
+            ⚙️
+        </button>
+
+        <div id="painelConfig" class="hidden">
+
+            <label>
+                Formato:
+                <select id="formatoHora">
+                    <option value="24">24h</option>
+                    <option value="12">12h</option>
+                </select>
+            </label>
+
+            <label>
+                <input type="checkbox" id="toggleSegundos" checked>
+                Mostrar segundos
+            </label>
+
+            <label>
+                Tema:
+                <select id="tema">
+                    <option value="auto">Automático</option>
+                    <option value="dark">Escuro</option>
+                    <option value="light">Claro</option>
+                </select>
+            </label>
+
+            <label>
+                Cor principal:
+                <input type="color" id="corTema">
+            </label>
+
+            
+        </div>
+        <button id="modoFoco">Modo Foco</button>
 
     </div>
 
     <script src="js/script.js"></script>
-</body>
 
+</body>
 </html>

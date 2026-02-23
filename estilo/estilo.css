@@ -26,25 +26,33 @@ body{
 }
 
 .container{
-    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    position:relative;
 }
 
 .data{
+    position:relative;
+    z-index:10;
     font-size:22px;
-    margin-bottom:20px;
+    margin-bottom:50px;
     opacity:0.9;
 }
 
 .boxRelogio{
     display:flex;
     gap:30px;
-    padding:30px 40px;
+    padding:20px;
 
     background:rgba(255,255,255,0.08);
     backdrop-filter: blur(12px);
 
     border-radius:16px;
     box-shadow:0 8px 30px rgba(0,0,0,0.4);
+    transition: transform 0.25s ease;
 }
 
 .boxRelogio div{
@@ -67,4 +75,117 @@ body{
 
 small{
     opacity:0.7;
+}
+
+
+#btnConfig{
+    position:fixed;
+    top:20px;
+    right:20px;
+    font-size:22px;
+    cursor:pointer;
+    z-index: 9999;
+}
+
+#painelConfig{
+    position:fixed;
+    right:20px;
+    top:60px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    padding:15px;
+    border-radius:10px;
+    gap:10px;
+}
+
+#modoFoco{
+    position:fixed;
+    top:20px;
+    right:60px;
+    padding:8px;
+    background:transparent;
+    border-radius: 10px;
+    border:1px solid var(--cor-principal);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.hidden{
+    display:none;
+}
+
+body.light{
+    background:linear-gradient(135deg,#e6e9f0,#eef1f5);
+    color:#111;
+}
+
+:root{
+    --cor-principal:#143b3f;
+}
+
+.boxRelogio{
+    border:2px solid var(--cor-principal);
+    min-height:170px;
+    position:relative;
+    z-index:1;
+}
+
+
+body.focus #painelConfig,
+body.focus #btnConfig,
+body.focus .data{
+    display:none;
+}
+
+body.focus .container{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+body.focus .boxRelogio{
+    transform:scale(1.8);
+}
+
+
+.numero{
+    position:relative;
+    display:inline-block;
+}
+
+.flip{
+    animation:flipAnim 0.35s ease;
+}
+
+@keyframes flipAnim{
+    0%{
+        transform:translateY(10px);
+        opacity:0;
+    }
+    50%{
+        opacity:0.5;
+    }
+    100%{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+
+.tick{
+    animation: tickAnim 0.25s ease;
+}
+
+@keyframes tickAnim{
+    0%{
+        transform: translateY(10px);
+        opacity:0.3;
+    }
+    100%{
+        transform: translateY(0);
+        opacity:1;
+    }
 }
