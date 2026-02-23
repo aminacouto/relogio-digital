@@ -1,58 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Nerko One", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Orbitron', sans-serif;
+}
 
 body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: gradient 30s ease-in-out infinite;
-    /*background: linear-gradient(-45deg,#F2668B, #025E73,  #007e67,#026873, #F2668B);*/
-    background-color: #310a00;
-    background: linear-gradient(120deg,#310a00, #A52502, #310a00);
-    background-size: 300% 300%;
-    height: 100vh;
-    color: white;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    background-size:300% 300%;
+    animation:gradient 15s ease infinite;
+    color:white;
 }
-@keyframes gradient {
-0%{
-    background-position: 0 50%;
+
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
-50% {
-    background-position: 100% 50%;
+
+.container{
+    text-align:center;
 }
-100%{
-    background-position: 0 50%;
-}
+
+.data{
+    font-size:22px;
+    margin-bottom:20px;
+    opacity:0.9;
 }
 
 .boxRelogio{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 550px;
-    height: 200px;
-    border-radius: 6px;
-    background: rgba(0, 0, 0, 0.4);
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.397);
-    margin: 20px; 
+    display:flex;
+    gap:30px;
+    padding:30px 40px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+
+    border-radius:16px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.4);
 }
 
 .boxRelogio div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:120px;
 }
 
-#horas, #minutos, #segundos{
-    font-size: 100px;
+#horas,
+#minutos,
+#segundos{
+    font-size:80px;
+    font-weight:600;
+    transition:0.2s;
 
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+}
+
+small{
+    opacity:0.7;
 }

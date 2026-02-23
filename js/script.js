@@ -1,18 +1,43 @@
 const horas = document.getElementById('horas');
 const minutos = document.getElementById('minutos');
 const segundos = document.getElementById('segundos');
+const dataAtual = document.getElementById('dataAtual');
 
-const relogio = setInterval(function time() {
-    let dateToday = new Date();
-    let hr = dateToday.getHours();
-    let min = dateToday.getMinutes();
-    let sec = dateToday.getSeconds();
+const diasSemana = [
+    "Domingo",
+    "Segunda-feira",
+    "Terça-feira",
+    "Quarta-feira",
+    "Quinta-feira",
+    "Sexta-feira",
+    "Sábado"
+];
 
-    if (hr < 10) hr = '0' + hr;
-    if (min < 10) min = '0' + min;
-    if (sec < 10) sec = '0' + sec;
+function atualizarRelogio() {
 
-    horas.textContent = hr;
-    minutos.textContent = min;
-    segundos.textContent = sec;
-})
+    const agora = new Date();
+
+    let hr = agora.getHours();
+    let min = agora.getMinutes();
+    let sec = agora.getSeconds();
+
+    const dia = agora.getDate().toString().padStart(2, '0');
+    const mes = (agora.getMonth() + 1).toString().padStart(2, '0');
+    const ano = agora.getFullYear();
+    const diaSemana = diasSemana[agora.getDay()];
+
+    horas.textContent = hr.toString().padStart(2, '0');
+    minutos.textContent = min.toString().padStart(2, '0');
+    segundos.textContent = sec.toString().padStart(2, '0');
+
+    dataAtual.textContent = `${dia}/${mes}/${ano} - ${diaSemana}`;
+}
+
+setInterval(atualizarRelogio, 1000);
+atualizarRelogio();
+
+ // Registro do Service Worker para suporte offline
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker registrado"));
+}

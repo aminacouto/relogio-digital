@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f2027">
     <link rel="stylesheet" href="estilo/estilo.css">
-    <title>Relógio Digital</title>
+    <title>Digital Clock</title>
 </head>
+
 <body>
-    <div class="boxRelogio">
-        <div>
-            <span id="horas">00</span>
-            <span id="tempo">Horas</span>
+
+    <div class="container">
+
+        <div id="dataAtual" class="data">
+            00/00/0000 - Segunda-feira
         </div>
-        <div>
-            <span id="minutos">00</span>
-            <span id="tempo">Minutos</span>
+
+        <div class="boxRelogio">
+            <div>
+                <span id="horas">00</span>
+                <small>Horas</small>
+            </div>
+
+            <div>
+                <span id="minutos">00</span>
+                <small>Minutos</small>
+            </div>
+
+            <div>
+                <span id="segundos">00</span>
+                <small>Segundos</small>
+            </div>
         </div>
-        <div>
-            <span id="segundos">00</span>
-            <span id="tempo">Segundos</span>
-        </div>
+
     </div>
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
