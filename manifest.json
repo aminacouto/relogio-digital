@@ -1,6 +1,6 @@
 {
-  "name": "Digital Clock",
-  "short_name": "Clock",
+  "name": "Relógio Digital",
+  "short_name": "Relógio",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0f2027",
