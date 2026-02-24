@@ -30,7 +30,7 @@ const preferenciasPadrao = {
     formato: "24",
     segundos: true,
     tema: "auto",
-    cor: "#00e5ff",
+    cor: "#18535a",
     focus: {
         scale: 1.6,
         x: 0,

@@ -1,191 +1,230 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Orbitron', sans-serif;
 }
 
-body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    background-size:300% 300%;
-    animation:gradient 15s ease infinite;
-    color:white;
+:root {
+    --cor-principal: #18535a;
 }
 
-@keyframes gradient{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+/* Estilos para o tema claro */
+body.light {
+    background: linear-gradient(135deg, #cfd8e3, #d6dee8, #c9d3df);
+    color: var(--cor-principal);
 }
 
-.container{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
-    position:relative;
+body.light .boxRelogio {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+
+    border: 2px solid var(--cor-principal);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-.data{
-    position:relative;
-    z-index:10;
-    font-size:22px;
-    margin-bottom:50px;
-    opacity:0.9;
+body.light small {
+    opacity: 0.6;
 }
 
-.boxRelogio{
-    display:flex;
-    gap:30px;
-    padding:20px;
+body.light #btnConfig {
+    border: 1px solid var(--cor-principal);
+    border-radius: 6px;
+}
 
-    background:rgba(255,255,255,0.08);
+body.light #painelConfig {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+body.light #modoFoco {
+    color: var(--cor-principal);
+}
+
+/**/
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-size: 300% 300%;
+    animation: gradient 15s ease infinite;
+    color: white;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+.data {
+    position: relative;
+    z-index: 10;
+    font-size: 22px;
+    margin-bottom: 50px;
+    opacity: 0.9;
+}
+
+.boxRelogio {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
 
-    border-radius:16px;
-    box-shadow:0 8px 30px rgba(0,0,0,0.4);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
     transition: transform 0.25s ease;
 }
 
-.boxRelogio div{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    width:120px;
+.boxRelogio div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
 }
 
 #horas,
 #minutos,
-#segundos{
-    font-size:80px;
-    font-weight:600;
-    transition:0.2s;
+#segundos {
+    font-size: 80px;
+    font-weight: 600;
+    transition: 0.2s;
 
     font-variant-numeric: tabular-nums;
     font-feature-settings: "tnum";
 }
 
-small{
-    opacity:0.7;
+small {
+    opacity: 0.7;
 }
 
 
-#btnConfig{
-    position:fixed;
-    top:20px;
-    right:20px;
-    font-size:22px;
-    cursor:pointer;
+#btnConfig {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+    cursor: pointer;
     z-index: 9999;
 }
 
-#painelConfig{
-    position:fixed;
-    right:20px;
-    top:60px;
-    background:rgba(255,255,255,0.08);
+#painelConfig {
+    position: fixed;
+    right: 20px;
+    top: 60px;
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
-    padding:15px;
-    border-radius:10px;
-    gap:10px;
-}
-
-#modoFoco{
-    position:fixed;
-    top:20px;
-    right:60px;
-    padding:8px;
-    background:transparent;
+    padding: 15px;
     border-radius: 10px;
-    border:1px solid var(--cor-principal);
-    color:white;
-    font-weight:600;
-    cursor:pointer;
+    gap: 10px;
 }
 
-.hidden{
-    display:none;
+#modoFoco {
+    position: fixed;
+    top: 20px;
+    right: 60px;
+    padding: 7px;
+    background: transparent;
+    border-radius: 10px;
+    border: 1px solid var(--cor-principal);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-body.light{
-    background:linear-gradient(135deg,#e6e9f0,#eef1f5);
-    color:#111;
+.hidden {
+    display: none;
 }
 
-:root{
-    --cor-principal:#143b3f;
+.boxRelogio {
+    border: 2px solid var(--cor-principal);
+    min-height: 170px;
+    position: relative;
+    z-index: 1;
 }
-
-.boxRelogio{
-    border:2px solid var(--cor-principal);
-    min-height:170px;
-    position:relative;
-    z-index:1;
-}
-
 
 body.focus #painelConfig,
 body.focus #btnConfig,
-body.focus .data{
-    display:none;
+body.focus .data {
+    display: none;
 }
 
-body.focus .container{
-    position:fixed;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+body.focus .container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-body.focus .boxRelogio{
-    transform:scale(1.8);
+body.focus .boxRelogio {
+    transform: scale(1.8);
 }
 
-
-.numero{
-    position:relative;
-    display:inline-block;
+.numero {
+    position: relative;
+    display: inline-block;
 }
 
-.flip{
-    animation:flipAnim 0.35s ease;
+.flip {
+    animation: flipAnim 0.35s ease;
 }
 
-@keyframes flipAnim{
-    0%{
-        transform:translateY(10px);
-        opacity:0;
+@keyframes flipAnim {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
     }
-    50%{
-        opacity:0.5;
+
+    50% {
+        opacity: 0.5;
     }
-    100%{
-        transform:translateY(0);
-        opacity:1;
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
 
-.tick{
+.tick {
     animation: tickAnim 0.25s ease;
 }
 
-@keyframes tickAnim{
-    0%{
+@keyframes tickAnim {
+    0% {
         transform: translateY(10px);
-        opacity:0.3;
+        opacity: 0.3;
     }
-    100%{
+
+    100% {
         transform: translateY(0);
-        opacity:1;
+        opacity: 1;
     }
 }
